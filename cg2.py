@@ -35,19 +35,22 @@ def calculate_cg(front_seat_weight, rear_seat_weight, fuel_weight, baggage_weigh
         st.write("CG requirement is not satisfied")
 
 
-# Streamlit app UI
-st.title("Cessna 172 Center of Gravity Calculator")
-st.write("Enter the weight of the passengers, fuel, and baggage to calculate the center of gravity.")
+def app():
+    # Streamlit app UI
+    st.title("C172S CG")
+    st.write(
+        "Enter the weight of the passengers, fuel, and baggage to calculate the center of gravity.")
 
-front_seat_weight = st.number_input("Front seat passengers (lbs): ", value=0.0)
-rear_seat_weight = st.number_input(
-    "Rear seat passengers or bags (lbs): ", value=0.0)
-fuel_weight = st.number_input("Fuel (lbs): ", value=0.0)
-baggage_weight_a = st.number_input(
-    "Enter front baggage weight (lbs): ", value=0.0)
-baggage_weight_b = st.number_input(
-    "Enter rear baggage weight (lbs): ", value=0.0)
+    front_seat_weight = st.number_input(
+        "Front seat passengers (lbs): ", value=0.0)
+    rear_seat_weight = st.number_input(
+        "Rear seat passengers or bags (lbs): ", value=0.0)
+    fuel_weight = st.number_input("Fuel (lbs): ", value=0.0)
+    baggage_weight_a = st.number_input(
+        "Enter front baggage weight (lbs): ", value=0.0)
+    baggage_weight_b = st.number_input(
+        "Enter rear baggage weight (lbs): ", value=0.0)
 
-if st.button("Calculate CG"):
-    calculate_cg(front_seat_weight, rear_seat_weight,
-                 fuel_weight, baggage_weight_a, baggage_weight_b)
+    if st.button("Calculate CG"):
+        calculate_cg(front_seat_weight, rear_seat_weight,
+                     fuel_weight, baggage_weight_a, baggage_weight_b)
